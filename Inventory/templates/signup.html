@@ -101,9 +101,14 @@
                 {{ form.email.errors }}
             </div>
             <div class="form-group">
-                {{ form.password.label_tag }}
-                {{ form.password }}
-                {{ form.password.errors }}
+                {{ form.password1.label_tag }}
+                {{ form.password1 }}
+                {{ form.password1.errors }}
+            </div>
+            <div class="form-group">
+                {{ form.password2.label_tag }}
+                {{ form.password2 }}
+                {{ form.password2.errors }}
             </div>
 
             <!-- Submit Button -->
@@ -112,7 +117,7 @@
 
         <!-- Link to Login Page -->
         <p class="text-center mt-3">
-            Already have an account? <a href="">Login here</a>.
+            Already have an account? <a href="{% url 'login' %}">Login here</a>.
         </p>
     </div>
 
