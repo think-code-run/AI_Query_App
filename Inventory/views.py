@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
 from django.contrib import messages
 from .forms import UserSignupForm, UserLoginForm
+from django.contrib.auth.decorators import login_required
 
 def Homepage(request):
     return render(request, 'homepage.html')
@@ -36,7 +37,7 @@ def loginPage(request):
             if user is not None:
                 login(request, user)  # Log the user in
                 messages.success(request, "You have logged in successfully!")
-                return redirect('home')  # Redirect to homepage after successful login
+                return redirect('upload')  # Redirect to the upload page after successful login
             else:
                 messages.error(request, "Invalid username or password.")
         else:
@@ -46,3 +47,8 @@ def loginPage(request):
         form = UserLoginForm()
 
     return render(request, 'login.html', {'form': form})
+
+@login_required
+def uploadPage(request):
+    # Your upload page logic here
+    return render(request, 'upload.html')

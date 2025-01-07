@@ -72,7 +72,7 @@
                     <a class="nav-link" href="http://127.0.0.1:8000/inventory/about/">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="http://127.0.0.1:8000/inventory/signup/">Sign up</a>
+                    <a class="nav-link" href="{% url 'login' %}">Log in</a>
                 </li>
             </ul>
         </div>
@@ -82,7 +82,7 @@
     <div class="main-container">
         <h2>Welcome to the AI-Powered CSV Query App!</h2>
         <p>Upload your CSV files, ask questions in plain language, and instantly get meaningful insights from your data. Whether you're a student, analyst, or business owner, our app will help you easily analyze and extract relevant information from your datasets without needing advanced technical skills.</p>
-        <a href="http://127.0.0.1:8000/inventory/signup/" class="btn btn-primary">Get Started</a>
+        <a href="{% url 'login' %}" class="btn btn-primary">Get Started</a>
     </div>
 
     <!-- Footer -->
